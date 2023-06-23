@@ -7,8 +7,12 @@ const authSchema = Joi.object({
   email: Joi.string().email().required(),
 });
 
+const userEmailSchema = Joi.object({
+  email: Joi.string().email().required(),
+});
+
 const subscriptionSchema = Joi.object({
   subscription: Joi.string().valid(...validSubscription),
 });
 
-module.exports = { authSchema, subscriptionSchema };
+module.exports = { authSchema, subscriptionSchema, userEmailSchema };
